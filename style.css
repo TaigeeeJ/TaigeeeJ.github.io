@@ -2,7 +2,7 @@ body {
     background: rgb(190, 75, 222);
     color: rgb(45, 45, 45);
     padding: 10px;
-    font-family: 'Gill Sans', 'Gill Sans MT', , Arial, sans-serif, 'Trebuchet MS', sans-serif
+    font-family:sans-serif, 'Trebuchet MS' sans-serif
 }
 #all-contents {
   max-width: 800px;
