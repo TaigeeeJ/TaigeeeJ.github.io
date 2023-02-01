@@ -1,5 +1,5 @@
 body {
-    background: rgb(190, 75, 222);
+    background: rgb(202, 104, 234);
     color: rgb(45, 45, 45);
     padding: 10px;
     font-family:sans-serif, 'Trebuchet MS' sans-serif
@@ -11,7 +11,7 @@ body {
 
 /* navigation menu */
 nav {
-    background: rgb(211, 152, 233);
+    background: rgb(226, 186, 239);
    margin: 0 auto;
    margin-bottom: 20px;
    border-radius: 15px;
@@ -39,7 +39,7 @@ a {
 
 /* main container area beneath menu */
 main {
-    background: rgb(228, 158, 233);
+    background: rgb(226, 186, 239);
     display: flex;
 }
 .sidebar {
@@ -61,3 +61,30 @@ main {
 h2, h2 {
     margin: 5px;
 }
+         /* portfolio styles */
+         .content h1 {
+            color: black;
+        }
+
+        #portfolio {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        #portfolio li {
+            background: #fff;
+            padding: 10px;
+            
+           
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        #portfolio li:hover {
+            background: #eee;
+        }
+
+        #portfolio a {
+            text-decoration: none;
+            color: #bbb1b1;
+        }
