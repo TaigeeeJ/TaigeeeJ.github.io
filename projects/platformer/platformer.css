@@ -1,0 +1,11 @@
+body {
+  margin: 0px;
+}
+
+canvas {
+  background-color: rgb(206, 134, 240);
+}
+
+img {
+  display: none;
+}
