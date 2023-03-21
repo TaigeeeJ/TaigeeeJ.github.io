@@ -8,17 +8,20 @@
 		.box {
 			width: 70px;
 			height: 70px;
-			background-color: teal;
+			background-color: rgb(188, 136, 231);
 			font-size: 300%;
 			text-align: center;
 			user-select: none;
 			display: block;
 			position: absolute;
 			top: 100px;
-			left: 0px;  /* <--- Change me! */
+			left: 60px;  /* <--- Change me! */
 		}
 		.board{
 			height: 100vh;
+			background-image: url(images/images.jpeg);
+			background-size: cover;
+			background-repeat: no-repeat;
 		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
@@ -30,7 +33,8 @@
 
 	<script>
 		(function(){
-			'use strict'
+		
+			
 			/* global jQuery */
 
 			//////////////////////////////////////////////////////////////////
@@ -51,6 +55,10 @@
 			function moveBoxTo(newPositionX) {
 				box.css("left", newPositionX);
 			}
+			function moveBoxTo(newPositionX, newPositionY) {
+            box.css('left', newPositionX);
+            box.css('top', newPositionY);
+  }
 
 			// changes the text displayed on the Box
 			function changeBoxText(newText) {
@@ -62,6 +70,11 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
+			var postionX = 0;
+			var points = 0;
+			var speed = 10;
+			var positionY;
+            var speedY;
 			
 
 			
@@ -71,9 +84,16 @@
 			turn it around! 
 			*/
 			function update() {
-				
+				positionX = positionX + speed;
+				moveBoxTo(positionX);
 
-			};
+				if (positionX > boardWidth){
+					speed = -speed
+				}
+				if (positionX < 0 ){
+				speed = -speed
+				}
+			}
 
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
@@ -81,10 +101,14 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
+				positionX = 0;
+				points = points + 1; 
+				changeBoxText (points);
+				speed = speed + 3;
 				
 
 
-			};
+			}
 		})();
 	</script>
 </body>
