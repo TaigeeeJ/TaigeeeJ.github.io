@@ -25,7 +25,8 @@ var init = function (window) {
         var circles = [];	// variable to store all circles in one Array
 
         // TODO 2 : Create a function that draws a circle 
-        function drawCircle(); {
+        function drawCircle() {
+            // Code to draw a circle
             circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
             physikz.addRandomVelocity(circle, canvas);
             view.addChild(circle);
@@ -34,7 +35,7 @@ var init = function (window) {
         }
 
         // TODO 3 / 7 : Call the drawCircle() function 
-        for(var i = 0; i < 100; i++) {
+        for (var i = 0; i < 100; i++) {
             drawCircle();
         }
 
@@ -57,7 +58,7 @@ var init = function (window) {
 
 
             // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
-           
+
             // TODO 9 : Iterate over the array
 
 
@@ -75,7 +76,7 @@ var init = function (window) {
         game.checkCirclePosition = function (circle) {
 
             // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
-           
+
 
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
             if (circle.x > canvas.width) {
