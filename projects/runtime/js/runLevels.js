@@ -18,24 +18,68 @@ var runLevels = function (window) {
 
     // TODOs 5 through 11 go here
     // BEGIN EDITING YOUR CODE HERE
+    function createSawBlade(x, y) {
+      var hitZoneSize = 25;
+      var damageFromObstacle = 10;
+      var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
 
-    
-
-    function startLevel() {
-      // TODO 13 goes below here
-
-
-
-      //////////////////////////////////////////////
-      // DO NOT EDIT CODE BELOW HERE
-      //////////////////////////////////////////////
-      if (++currentLevel === levelData.length) {
-        startLevel = () => {
-          console.log("Congratulations!");
-        };
-      }
+      sawBladeHitZone.x = x;
+      sawBladeHitZone.y = y;
+      game.addGameItem(sawBladeHitZone);
+      var obstacleImage = draw.bitmap("img/sawblade.png");
+      obstacleImage.x = -25
+      obstacleImage.y = -24
+      sawBladeHitZone.addChild(obstacleImage);
     }
-    startLevel();
+    createSawBlade(400, 600);
+    createSawBlade(300, 700)
+    createSawBlade(800, 650)
+
+
+
+    var enemy = game.createGameItem("enemy", 25);
+    var redSquare = draw.rect(50, 50, "red");
+    redSquare.x = -25;
+    redSquare.y = -25;
+    enemy.addChild(redSquare);
+
+    enemy.x = 400;
+    enemy.y = groundY - 50;
+    game.addGameItem(enemy);
+
+  //   enemy.onPlayerCollision = function collision() {
+  //     game.changeIntegrity(-10)
+  // };
+
+  // enemy.onProjectileCollision() = function projectile {
+  //   game.increaseScore(100);
+  // enemy.fadeOut();
+// }
+
+function createEnemy(x,y) {
+ createEnemy.x = x
+ createEnemy.y = y
+}
+createEnemy(400, groundY - 10);
+createEnemy(800, groundY - 100);
+createEnemy(1200, groundY - 50);
+
+function createReward(){}
+function startLevel() {
+  // TODO 13 goes below here
+
+
+
+  //////////////////////////////////////////////
+  // DO NOT EDIT CODE BELOW HERE
+  //////////////////////////////////////////////
+  if (++currentLevel === levelData.length) {
+    startLevel = () => {
+      console.log("Congratulations!");
+    };
+  }
+}
+startLevel();
   };
 };
 
