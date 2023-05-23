@@ -36,50 +36,49 @@ var runLevels = function (window) {
     createSawBlade(800, 650)
 
 
-
+function createEnemy(x, y) {
     var enemy = game.createGameItem("enemy", 25);
     var redSquare = draw.rect(50, 50, "red");
     redSquare.x = -25;
     redSquare.y = -25;
     enemy.addChild(redSquare);
 
-    enemy.x = 400;
-    enemy.y = groundY - 50;
+    enemy.x = x
+    enemy.y = groundY - y;
     game.addGameItem(enemy);
+    enemy.velocityX = -3;
+    enemy.rotationalVelocity = -2;
 
-  //   enemy.onPlayerCollision = function collision() {
-  //     game.changeIntegrity(-10)
-  // };
+    enemy.onPlayerCollision = function collision() {
+      game.changeIntegrity(-10)
+    }
 
-  // enemy.onProjectileCollision() = function projectile {
-  //   game.increaseScore(100);
-  // enemy.fadeOut();
-// }
+    enemy.onProjectileCollision() = function () {
+      game.increaseScore(100);
+      enemy.fadeOut();
+    }
+    
+   }
+    createEnemy(400, 100);
+    createEnemy(410, 200);
+    createEnemy(1200, 250);
 
-function createEnemy(x,y) {
- createEnemy.x = x
- createEnemy.y = y
-}
-createEnemy(400, groundY - 10);
-createEnemy(800, groundY - 100);
-createEnemy(1200, groundY - 50);
-
-function createReward(){}
-function startLevel() {
-  // TODO 13 goes below here
-
+    function createReward() { }
+    function startLevel() {
+      // TODO 13 goes below here
 
 
-  //////////////////////////////////////////////
-  // DO NOT EDIT CODE BELOW HERE
-  //////////////////////////////////////////////
-  if (++currentLevel === levelData.length) {
-    startLevel = () => {
-      console.log("Congratulations!");
-    };
-  }
-}
-startLevel();
+
+      //////////////////////////////////////////////
+      // DO NOT EDIT CODE BELOW HERE
+      //////////////////////////////////////////////
+      if (++currentLevel === levelData.length) {
+        startLevel = () => {
+          console.log("Congratulations!");
+        };
+      }
+    }
+    startLevel();
   };
 };
 
